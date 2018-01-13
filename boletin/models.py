@@ -14,3 +14,15 @@ class Registrado(models.Model):
 
     def __str__(self): #Python 3
         return self.email
+
+class Noticia(models.Model):
+    titulo = models.CharField(max_length=250)
+    fuente = models.CharField(max_length=100)
+    texto = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    def __unicode__(self): #Python 2
+        return self.titulo
+
+    def __str__(self): #Python 3
+        return self.titulo

@@ -16,3 +16,14 @@ class AdminRegistrado(admin.ModelAdmin):
         model = Registrado
 
 admin.site.register(Registrado, AdminRegistrado)
+
+from .models import Noticia
+
+class AdminNoticia(admin.ModelAdmin):
+    list_display = ['titulo', 'fuente', 'timestamp']
+    list_editable = ['fuente']
+    search_fields = ['titulo', 'fuente']
+    class Meta:
+        model = Noticia
+
+admin.site.register(Noticia, AdminNoticia)
